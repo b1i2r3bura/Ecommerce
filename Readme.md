@@ -4,7 +4,7 @@ A full-stack(MERN) e-commerce web application for browsing and buying items, wit
 
 Built with **React (Vite)** on the front end and **Node.js, Express and MongoDB** on the back end.
 
-
+![alt text](image.png)
 
 ## Features
 
@@ -70,7 +70,7 @@ ecommerce/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ecommerce.git
+git clone https://github.com/b1i2r3bura/ecommerce.git
 cd ecommerce
 ```
 
@@ -149,11 +149,8 @@ Copy `.env.example` to `.env` and set:
 
 ## Author
 
-**Biruk**
-GitHub: [@YOUR-USERNAME](https://github.com/YOUR-USERNAME)
+**Biruk Mitku**
+GitHub: https://github.com/b1i2r3bura
 
 ---
 
-## License
-
-This project is for learning and portfolio purposes. Add a license (for example MIT) if you want others to reuse it.
