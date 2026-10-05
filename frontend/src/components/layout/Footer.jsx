@@ -4,6 +4,9 @@
 
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiShield, FiTruck, FiRefreshCw, FiMail } from 'react-icons/fi';
+import { FaGithub, FaTelegram, FaInstagram,  } from 'react-icons/fa';
+
+
 import './Footer.css';
 
 const Footer = () => {
@@ -93,6 +96,21 @@ const Footer = () => {
           <p className="copyright-text">
             © {new Date().getFullYear()} ATELIER Goods. All rights reserved.
           </p>
+          <div>
+            <p>Made by Biruk Mitku</p>
+       
+<div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+  <a href="https://github.com/b1i2r3bura" target="_blank" rel="noopener noreferrer">
+    <FaGithub size={24} />
+  </a>
+  <a href="https://t.me/b1_i2_r3" target="_blank" rel="noopener noreferrer">
+    <FaTelegram size={24} />
+  </a>
+  <a href="https://instagram.com/b_iruk3" target="_blank" rel="noopener noreferrer">
+    <FaInstagram size={24} />
+  </a>
+</div>
+          </div>
           <div className="footer-bottom-links">
             <Link to="/about">Ethics & Sustainability</Link>
             <span className="dot">•</span>
