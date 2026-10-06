@@ -49,13 +49,13 @@ const Layout = () => {
 const NotFoundPage = () => {
   return (
     <div className="container" style={{ textAlign: 'center', padding: 'var(--space-20) 0' }}>
-      <span style={{ fontSize: '3.5rem', fontWeight: 800, fontFamily: 'var(--font-serif)', color: 'var(--color-accent)' }}>404</span>
-      <h1 style={{ fontSize: '2rem', margin: 'var(--space-2) 0' }}>Piece Not Found</h1>
+      <span style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--color-accent)' }}>404</span>
+      <h1 style={{ fontSize: '2rem', margin: 'var(--space-2) 0' }}>Page Not Found</h1>
       <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-6)' }}>
-        The archive page you are looking for does not exist or has been relocated.
+        The page you are looking for does not exist or has been moved.
       </p>
       <Link to="/" className="btn btn-primary btn-md">
-        Return to Atelier Home
+        Return Home
       </Link>
     </div>
   );

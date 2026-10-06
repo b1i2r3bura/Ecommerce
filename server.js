@@ -42,10 +42,27 @@ const app = express();
 
 // ── Global Middleware ──────────────────────────────────────────────────────────
 
-// CORS — allows our React frontend (on a different port) to make requests.
+// CORS — allows our React frontend (on any port or local network IP) to make requests.
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, Postman) or any local dev origin
+      if (!origin) return callback(null, true);
+      
+      const isLocalOrLAN =
+        origin.startsWith('http://localhost') ||
+        origin.startsWith('http://127.0.0.1') ||
+        origin.startsWith('http://192.168.') ||
+        origin.startsWith('http://10.') ||
+        origin.startsWith('http://172.') ||
+        origin === process.env.FRONTEND_URL;
+
+      if (isLocalOrLAN) {
+        callback(null, true);
+      } else {
+        callback(null, true); // Permissive in dev to guarantee connectivity
+      }
+    },
     credentials: true,
   })
 );

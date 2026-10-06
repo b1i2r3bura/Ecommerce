@@ -5,7 +5,15 @@
  * If it's already an external absolute URL (Unsplash, HTTPS), leaves it intact.
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const getBaseHost = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '');
+  }
+  if (typeof window !== 'undefined' && window.location?.hostname) {
+    return `http://${window.location.hostname}:5000`;
+  }
+  return 'http://localhost:5000';
+};
 
 export const getImageUrl = (imagePath) => {
   if (!imagePath) {
@@ -14,7 +22,7 @@ export const getImageUrl = (imagePath) => {
 
   if (imagePath.startsWith('/uploads/') || imagePath.startsWith('uploads/')) {
     const cleanPath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
-    return `${API_BASE}${cleanPath}`;
+    return `${getBaseHost()}${cleanPath}`;
   }
 
   return imagePath;
